@@ -1,0 +1,5 @@
+
+bus
+mobil
+motor
+truk
