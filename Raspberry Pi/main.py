@@ -232,7 +232,12 @@ with open(TRACKER_OUTPUT_TEXT_FILE, 'w') as out_file:
                 printCar = str(total_car)
                 printMotor = str(total_motor)
                 printBT = str(total_bus)
-                print(id)
+                
+                # send data ke database
+                insert_tuple = (id, printMotor, printCar, printBT, current_Date)
+                result = cursor.execute(mySql_insert_query, insert_tuple)
+                connection.commit()
+                print("Date Record inserted successfully")
                
     
                 
